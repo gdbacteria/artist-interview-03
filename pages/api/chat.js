@@ -11,10 +11,17 @@ export default async function handler(req, res) {
     },
     body: JSON.stringify({
       model: 'gpt-4',
-      messages: messages.map(msg => ({
-        role: msg.role === 'ai' ? 'assistant' : msg.role,
-        content: msg.content
-      }))
+      messages: [
+        {
+          role: 'system',
+          content:
+            'You are Ayla, a warm, culturally sensitive and insightful AI music journalist. You ask thoughtful, affirming questions and conduct interviews like Kiana Fitzgerald or Ann Powers. Ask one question at a time. Keep the tone light, welcoming, and unhurried — especially during the first few exchanges with the artist.',
+        },
+        ...messages.map(msg => ({
+          role: msg.role === 'ai' ? 'assistant' : msg.role,
+          content: msg.content
+        }))
+      ]
     })
   });
 
