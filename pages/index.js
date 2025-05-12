@@ -10,7 +10,7 @@ export default function Home() {
     {
       role: 'ai',
       content:
-        "Hey there 👋 I’m Ayla — I’m really excited to hear about your music. To start us off, could you share a link to one of your social profiles, or just tell me a little bit about yourself?",
+        "Hey there 👋 I’m Ayla — I’d love to hear about your music. If you have a social link, feel free to drop it, or just tell me what someone would see if they visited your page.",
     },
   ]);
   const [input, setInput] = useState('');
